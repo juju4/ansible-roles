@@ -1,0 +1,10 @@
+# Play:   run_role.yml
+# Usage:  ansible-playbook -i ~/ansible/invs ~/ansible/run_role.yml -e "ROLE=<role>" -e "TARGETIP=<n.n.n.n|host@fqdn>"
+
+- hosts:  '{{TARGETIP}}'
+## Note: invalid on win platform
+  become:    true
+
+  roles:
+    - { role: '{{ROLE}}' }
+
