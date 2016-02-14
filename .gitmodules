@@ -1,0 +1,36 @@
+[submodule "siftrem"]
+	path = siftrem
+	url = git@github.com:juju4/ansible-siftrem.git
+[submodule "adduser"]
+	path = adduser
+	url = git@github.com:juju4/ansible-adduser.git
+[submodule "sysdigcapture"]
+	path = sysdigcapture
+	url = git@github.com:juju4/ansible-sysdigcapture.git
+[submodule "sketchy"]
+	path = sketchy
+	url = git@github.com:juju4/ansible-sketchy.git
+[submodule "scumblr"]
+	path = scumblr
+	url = git@github.com:juju4/ansible-scumblr.git
+[submodule "memcapture"]
+	path = memcapture
+	url = git@github.com:juju4/ansible-memcapture.git
+[submodule "loki"]
+	path = loki
+	url = git@github.com:juju4/ansible-loki.git
+[submodule "fastir"]
+	path = fastir
+	url = git@github.com:juju4/ansible-fastir.git
+[submodule "Mayeu.RabbitMQ"]
+	path = Mayeu.RabbitMQ
+	url = git@github.com:juju4/ansible-playbook-rabbitmq.git
+[submodule "mig"]
+	path = mig
+	url = git@github.com:juju4/ansible-mig.git
+[submodule "mhn"]
+	path = mhn
+	url = git@github.com:juju4/ansible-mhn.git
+[submodule "grr"]
+	path = grr
+	url = git@github.com:juju4/ansible-grr.git
