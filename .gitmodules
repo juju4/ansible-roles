@@ -34,3 +34,6 @@
 [submodule "grr"]
 	path = grr
 	url = git@github.com:juju4/ansible-grr.git
+[submodule "gpgkey_generate"]
+	path = gpgkey_generate
+	url = https://github.com/juju4/ansible-gpgkey_generate.git
