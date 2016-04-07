@@ -37,3 +37,27 @@
 [submodule "gpgkey_generate"]
 	path = gpgkey_generate
 	url = https://github.com/juju4/ansible-gpgkey_generate.git
+[submodule "icinga2"]
+	path = icinga2
+	url = git@github.com:juju4/ansible-icinga2.git
+[submodule "bro-ids"]
+	path = bro-ids
+	url = git@github.com:juju4/ansible-bro-ids.git
+[submodule "syslogclient"]
+	path = syslogclient
+	url = git@github.com:juju4/ansible-syslogclient.git
+[submodule "ntpclient"]
+	path = ntpclient
+	url = git@github.com:juju4/ansible-ntpclient.git
+[submodule "smokeping"]
+	path = smokeping
+	url = git@github.com:juju4/ansible-smokeping.git
+[submodule "flamegraph"]
+	path = flamegraph
+	url = git@github.com:juju4/ansible-flamegraph.git
+[submodule "vortessence"]
+	path = vortessence
+	url = git@github.com:juju4/ansible-vortessence.git
+[submodule "kbrebanov.osquery"]
+	path = kbrebanov.osquery
+	url = git@github.com:juju4/ansible-osquery.git
