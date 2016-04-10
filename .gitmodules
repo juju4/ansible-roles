@@ -61,3 +61,69 @@
 [submodule "kbrebanov.osquery"]
 	path = kbrebanov.osquery
 	url = git@github.com:juju4/ansible-osquery.git
+[submodule "Stouts.openvpn"]
+	path = Stouts.openvpn
+	url = git@github.com:juju4/Stouts.openvpn.git
+[submodule "zzet.rbenv"]
+	path = zzet.rbenv
+	url = git@github.com:juju4/ansible-rbenv-role.git
+[submodule "jdauphant.unbound"]
+	path = jdauphant.unbound
+	url = git@github.com:juju4/ansible-role-unbound.git
+[submodule "cis-ubuntu-ansible"]
+	path = cis-ubuntu-ansible
+	url = git@github.com:juju4/cis-ubuntu-ansible.git
+[submodule "cis-rhel-ansible"]
+	path = cis-rhel-ansible
+	url = git@github.com:juju4/cis-rhel-ansible.git
+[submodule "bakhti.elk"]
+	path = bakhti.elk
+	url = git@github.com:juju4/ansible-elk.git
+[submodule "dj-wasabi.ossec-agent"]
+	path = dj-wasabi.ossec-agent
+	url = git@github.com:juju4/ansible-ossec-agent.git
+[submodule "dj-wasabi.ossec-server"]
+	path = dj-wasabi.ossec-server
+	url = git@github.com:juju4/ansible-ossec-server.git
+[submodule "monclient"]
+	path = monclient
+	url = git@github.com:juju4/ansible-monclient.git
+[submodule "apt-cacher-ng-client"]
+	path = apt-cacher-ng-client
+	url = git@github.com:juju4/ansible-apt-cacher-ng-client.git
+[submodule "dnscrypt-proxy"]
+	path = dnscrypt-proxy
+	url = git@github.com:juju4/ansible-dnscrypt-proxy.git
+[submodule "swap"]
+	path = swap
+	url = git@github.com:juju4/ansible-swap.git
+[submodule "openvpnclient"]
+	path = openvpnclient
+	url = git@github.com:juju4/ansible-openvpnclient.git
+[submodule "ooniprobe"]
+	path = ooniprobe
+	url = git@github.com:juju4/ansible-ooniprobe.git
+[submodule "squid"]
+	path = squid
+	url = git@github.com:juju4/ansible-squid.git
+[submodule "smarthostclient"]
+	path = smarthostclient
+	url = git@github.com:juju4/ansible-smarthostclient.git
+[submodule "harden-webserver"]
+	path = harden-webserver
+	url = git@github.com:juju4/ansible-harden-webserver.git
+[submodule "maxmind"]
+	path = maxmind
+	url = git@github.com:juju4/ansible-maxmind.git
+[submodule "harden"]
+	path = harden
+	url = git@github.com:juju4/ansible-harden.git
+[submodule "brianshumate.hubot"]
+	path = brianshumate.hubot
+	url = git@github.com:juju4/ansible-hubot.git
+[submodule "ossecwui"]
+	path = ossecwui
+	url = git@github.com:juju4/ansible-ossecwui.git
+[submodule "observium"]
+	path = observium
+	url = git@github.com:juju4/ansible-observium.git
