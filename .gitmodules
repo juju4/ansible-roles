@@ -127,3 +127,6 @@
 [submodule "observium"]
 	path = observium
 	url = git@github.com:juju4/ansible-observium.git
+[submodule "MISP"]
+	path = MISP
+	url = git@github.com:juju4/ansible-MISP.git

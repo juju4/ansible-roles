@@ -15,6 +15,13 @@
   vars:
     - w_nagios: false
     - w_haproxy: false
+#    - w_vm_snapshot: vbox
+#    - w_vm_snapshot: vmware
+#    - vm_host: localhost
+#    - vm_guest_name: {{ inventory_hostname }}
+#    - vm_snapshot_name: {{ ansible_date_time.date }}_{{ ansible_date_time.hour }}{{ ansible_date_time.minute }}{{ ansible_date_time.second }}-{{ inventory_hostname }}
+#    - vm_snapshot_description: 'Ansible playbook-upgrade automated snapshot'
+#    - vm_vsphere_id:
     - noreboot: true   # if you want to disable necessary reboot
     - vboxguest: true
     - groups:
@@ -34,6 +41,19 @@
 #      delegate_to: "{{ item }}"
 #      with_items: "{{ groups.lbservers }}"
       when: w_haproxy is defined and w_haproxy
+    - name: take a snapshot of host on server - virtualbox
+      command: "VBoxManage snapshot {{ vm_guest_name }} take {{ vm_snapshot_name }} --description '{{ vm_snapshot_description }}'"
+      delegate_to: "{{ vm_host }}"
+      when: w_vm_snapshot is defined and w_vm_snapshot == 'vbox' and vm_host is defined
+      async: 3600
+      poll: 180
+## http://blog-lrivallain.rhcloud.com/2015/02/26/play-vm-snapshots-esxi-command-line-tools/
+    - name: take a snapshot of host on server - vsphere
+      command: "vim-cmd vmsvc/snapshot.create {{ vm_vsphere_id }} {{ vm_snapshot_name }} '{{ vm_snapshot_description }}' 1 1"
+      delegate_to: "{{ vm_host }}"
+      when: w_vm_snapshot is defined and w_vm_snapshot == 'vbox' and vm_host is defined
+      async: 3600
+      poll: 180
 ## Note: debian: if running, kill /etc/cron.daily/apt
     - name: check if cron.daily/apt has the lock
       command: pgrep -f /etc/cron.daily/apt
@@ -78,11 +98,15 @@
       when: (ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu') and (packages is defined and packages.stderr != "")
       tags:
         - upgrade
+      async: 3600
+      poll: 180
     - name: Debian | upgrade all packages to the latest version (dist)
       apt: upgrade=dist update_cache=yes cache_valid_time=3600
       when: (ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu') and (packages is defined and packages.stderr != "")
       tags:
         - upgrade
+      async: 3600
+      poll: 180
 
 #    - debug: var=file
 
@@ -91,13 +115,33 @@
       when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
       tags:
         - upgrade
+      async: 3600
+      poll: 180
 
     - name: OpenBSD | upgrade all packages
       openbsd_pkg: name=* state=latest
       when: ansible_distribution == 'OpenBSD'
       tags:
         - upgrade
+      async: 3600
+      poll: 180
     
+    - name: Darwin | check for system upgrade
+      shell: "softwareupdate -l --no-scan"
+      register: darwinsu
+      when: ansible_os_family == "Darwin"
+      changed_when: false
+    - name: Darwin | system upgrade
+      shell: "softwareupdate --install --all | tee /tmp/softwareupdate.out"
+      when: ansible_os_family == "Darwin" and darwinsu.stderr.find("No new software available.") == -1
+      async: 3600
+      poll: 180
+## FIXME! not supported
+#    - name: Darwin | macports upgrade
+#      macports: name=* present=latest
+#      when: ansible_os_family == "Darwin"
+    
+
     - name: apt | Check if packages need to be autoremoved
       command: apt-get --dry-run autoremove
       register: check_autoremove
