@@ -1,63 +1,141 @@
 [submodule "siftrem"]
-	path = siftrem
+	path = juju4.siftrem
 	url = git@github.com:juju4/ansible-siftrem.git
 [submodule "adduser"]
-	path = adduser
+	path = juju4.adduser
 	url = git@github.com:juju4/ansible-adduser.git
 [submodule "sysdigcapture"]
-	path = sysdigcapture
+	path = juju4.sysdigcapture
 	url = git@github.com:juju4/ansible-sysdigcapture.git
 [submodule "sketchy"]
-	path = sketchy
+	path = juju4.sketchy
 	url = git@github.com:juju4/ansible-sketchy.git
 [submodule "scumblr"]
-	path = scumblr
+	path = juju4.scumblr
 	url = git@github.com:juju4/ansible-scumblr.git
 [submodule "memcapture"]
-	path = memcapture
+	path = juju4.memcapture
 	url = git@github.com:juju4/ansible-memcapture.git
 [submodule "loki"]
-	path = loki
+	path = juju4.loki
 	url = git@github.com:juju4/ansible-loki.git
 [submodule "fastir"]
-	path = fastir
+	path = juju4.fastir
 	url = git@github.com:juju4/ansible-fastir.git
+[submodule "mig"]
+	path = juju4.mig
+	url = git@github.com:juju4/ansible-mig.git
+[submodule "mhn"]
+	path = juju4.mhn
+	url = git@github.com:juju4/ansible-mhn.git
+[submodule "grr"]
+	path = juju4.grr
+	url = git@github.com:juju4/ansible-grr.git
+[submodule "gpgkey_generate"]
+	path = juju4.gpgkey_generate
+	url = https://github.com/juju4/ansible-gpgkey_generate.git
+[submodule "icinga2"]
+	path = juju4.icinga2
+	url = git@github.com:juju4/ansible-icinga2.git
+[submodule "bro-ids"]
+	path = juju4.bro-ids
+	url = git@github.com:juju4/ansible-bro-ids.git
+[submodule "syslogclient"]
+	path = juju4.syslogclient
+	url = git@github.com:juju4/ansible-syslogclient.git
+[submodule "ntpclient"]
+	path = juju4.ntpclient
+	url = git@github.com:juju4/ansible-ntpclient.git
+[submodule "smokeping"]
+	path = juju4.smokeping
+	url = git@github.com:juju4/ansible-smokeping.git
+[submodule "flamegraph"]
+	path = juju4.flamegraph
+	url = git@github.com:juju4/ansible-flamegraph.git
+[submodule "vortessence"]
+	path = juju4.vortessence
+	url = git@github.com:juju4/ansible-vortessence.git
+[submodule "cis-ubuntu-ansible"]
+	path = juju4.cis-ubuntu-ansible
+	url = git@github.com:juju4/cis-ubuntu-ansible.git
+[submodule "cis-rhel-ansible"]
+	path = juju4.cis-rhel-ansible
+	url = git@github.com:juju4/cis-rhel-ansible.git
+[submodule "bakhti.elk"]
+	path = juju4.bakhti.elk
+	url = git@github.com:juju4/ansible-elk.git
+[submodule "dj-wasabi.ossec-agent"]
+	path = juju4.dj-wasabi.ossec-agent
+	url = git@github.com:juju4/ansible-ossec-agent.git
+[submodule "dj-wasabi.ossec-server"]
+	path = juju4.dj-wasabi.ossec-server
+	url = git@github.com:juju4/ansible-ossec-server.git
+[submodule "monclient"]
+	path = juju4.monclient
+	url = git@github.com:juju4/ansible-monclient.git
+[submodule "apt-cacher-ng-client"]
+	path = juju4.apt-cacher-ng-client
+	url = git@github.com:juju4/ansible-apt-cacher-ng-client.git
+[submodule "dnscrypt-proxy"]
+	path = juju4.dnscrypt-proxy
+	url = git@github.com:juju4/ansible-dnscrypt-proxy.git
+[submodule "swap"]
+	path = juju4.swap
+	url = git@github.com:juju4/ansible-swap.git
+[submodule "openvpnclient"]
+	path = juju4.openvpnclient
+	url = git@github.com:juju4/ansible-openvpnclient.git
+[submodule "ooniprobe"]
+	path = juju4.ooniprobe
+	url = git@github.com:juju4/ansible-ooniprobe.git
+[submodule "squid"]
+	path = juju4.squid
+	url = git@github.com:juju4/ansible-squid.git
+[submodule "smarthostclient"]
+	path = juju4.smarthostclient
+	url = git@github.com:juju4/ansible-smarthostclient.git
+[submodule "harden-webserver"]
+	path = juju4.harden-webserver
+	url = git@github.com:juju4/ansible-harden-webserver.git
+[submodule "maxmind"]
+	path = juju4.maxmind
+	url = git@github.com:juju4/ansible-maxmind.git
+[submodule "harden"]
+	path = juju4.harden
+	url = git@github.com:juju4/ansible-harden.git
+[submodule "ossecwui"]
+	path = juju4.ossecwui
+	url = git@github.com:juju4/ansible-ossecwui.git
+[submodule "observium"]
+	path = juju4.observium
+	url = git@github.com:juju4/ansible-observium.git
+[submodule "MISP"]
+	path = juju4.MISP
+	url = git@github.com:juju4/ansible-MISP.git
+[submodule "remnux"]
+	path = juju4.remnux
+	url = git@github.com:juju4/ansible-remnux.git
+[submodule "sift"]
+	path = juju4.sift
+	url = git@github.com:juju4/ansible-sift.git
+[submodule "upgrade-pkgs"]
+	path = juju4.upgrade-pkgs
+	url = git@github.com:juju4/ansible-upgrade-pkgs.git
 [submodule "Mayeu.RabbitMQ"]
 	path = Mayeu.RabbitMQ
 	url = git@github.com:juju4/ansible-playbook-rabbitmq.git
-[submodule "mig"]
-	path = mig
-	url = git@github.com:juju4/ansible-mig.git
-[submodule "mhn"]
-	path = mhn
-	url = git@github.com:juju4/ansible-mhn.git
-[submodule "grr"]
-	path = grr
-	url = git@github.com:juju4/ansible-grr.git
-[submodule "gpgkey_generate"]
-	path = gpgkey_generate
-	url = https://github.com/juju4/ansible-gpgkey_generate.git
-[submodule "icinga2"]
-	path = icinga2
-	url = git@github.com:juju4/ansible-icinga2.git
-[submodule "bro-ids"]
-	path = bro-ids
-	url = git@github.com:juju4/ansible-bro-ids.git
-[submodule "syslogclient"]
-	path = syslogclient
-	url = git@github.com:juju4/ansible-syslogclient.git
-[submodule "ntpclient"]
-	path = ntpclient
-	url = git@github.com:juju4/ansible-ntpclient.git
-[submodule "smokeping"]
-	path = smokeping
-	url = git@github.com:juju4/ansible-smokeping.git
-[submodule "flamegraph"]
-	path = flamegraph
-	url = git@github.com:juju4/ansible-flamegraph.git
-[submodule "vortessence"]
-	path = vortessence
-	url = git@github.com:juju4/ansible-vortessence.git
+[submodule "geerlingguy.java"]
+	path = geerlingguy.java
+	url = git@github.com:juju4/ansible-role-java.git
+[submodule "geerlingguy.nginx"]
+	path = geerlingguy.nginx
+	url = git@github.com:juju4/ansible-role-nginx.git
+[submodule "geerlingguy.jenkins"]
+	path = geerlingguy.jenkins
+	url = git@github.com:juju4/ansible-role-jenkins.git
+[submodule "brianshumate.hubot"]
+	path = brianshumate.hubot
+	url = git@github.com:juju4/ansible-hubot.git
 [submodule "kbrebanov.osquery"]
 	path = kbrebanov.osquery
 	url = git@github.com:juju4/ansible-osquery.git
@@ -70,78 +148,3 @@
 [submodule "jdauphant.unbound"]
 	path = jdauphant.unbound
 	url = git@github.com:juju4/ansible-role-unbound.git
-[submodule "cis-ubuntu-ansible"]
-	path = cis-ubuntu-ansible
-	url = git@github.com:juju4/cis-ubuntu-ansible.git
-[submodule "cis-rhel-ansible"]
-	path = cis-rhel-ansible
-	url = git@github.com:juju4/cis-rhel-ansible.git
-[submodule "bakhti.elk"]
-	path = bakhti.elk
-	url = git@github.com:juju4/ansible-elk.git
-[submodule "dj-wasabi.ossec-agent"]
-	path = dj-wasabi.ossec-agent
-	url = git@github.com:juju4/ansible-ossec-agent.git
-[submodule "dj-wasabi.ossec-server"]
-	path = dj-wasabi.ossec-server
-	url = git@github.com:juju4/ansible-ossec-server.git
-[submodule "monclient"]
-	path = monclient
-	url = git@github.com:juju4/ansible-monclient.git
-[submodule "apt-cacher-ng-client"]
-	path = apt-cacher-ng-client
-	url = git@github.com:juju4/ansible-apt-cacher-ng-client.git
-[submodule "dnscrypt-proxy"]
-	path = dnscrypt-proxy
-	url = git@github.com:juju4/ansible-dnscrypt-proxy.git
-[submodule "swap"]
-	path = swap
-	url = git@github.com:juju4/ansible-swap.git
-[submodule "openvpnclient"]
-	path = openvpnclient
-	url = git@github.com:juju4/ansible-openvpnclient.git
-[submodule "ooniprobe"]
-	path = ooniprobe
-	url = git@github.com:juju4/ansible-ooniprobe.git
-[submodule "squid"]
-	path = squid
-	url = git@github.com:juju4/ansible-squid.git
-[submodule "smarthostclient"]
-	path = smarthostclient
-	url = git@github.com:juju4/ansible-smarthostclient.git
-[submodule "harden-webserver"]
-	path = harden-webserver
-	url = git@github.com:juju4/ansible-harden-webserver.git
-[submodule "maxmind"]
-	path = maxmind
-	url = git@github.com:juju4/ansible-maxmind.git
-[submodule "harden"]
-	path = harden
-	url = git@github.com:juju4/ansible-harden.git
-[submodule "brianshumate.hubot"]
-	path = brianshumate.hubot
-	url = git@github.com:juju4/ansible-hubot.git
-[submodule "ossecwui"]
-	path = ossecwui
-	url = git@github.com:juju4/ansible-ossecwui.git
-[submodule "observium"]
-	path = observium
-	url = git@github.com:juju4/ansible-observium.git
-[submodule "MISP"]
-	path = MISP
-	url = git@github.com:juju4/ansible-MISP.git
-[submodule "remnux"]
-	path = remnux
-	url = git@github.com:juju4/ansible-remnux.git
-[submodule "sift"]
-	path = sift
-	url = git@github.com:juju4/ansible-sift.git
-[submodule "geerlingguy.java"]
-	path = geerlingguy.java
-	url = git@github.com:juju4/ansible-role-java.git
-[submodule "geerlingguy.nginx"]
-	path = geerlingguy.nginx
-	url = git@github.com:juju4/ansible-role-nginx.git
-[submodule "geerlingguy.jenkins"]
-	path = geerlingguy.jenkins
-	url = git@github.com:juju4/ansible-role-jenkins.git

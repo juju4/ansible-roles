@@ -11,47 +11,73 @@
 ## http://docs.ansible.com/ansible/playbooks_delegation.html
   max_fail_percentage: 30
   become: yes
+## 1.9.1+, https://docs.ansible.com/ansible/playbooks_error_handling.html
+  force_handlers: True
 ## http://docs.ansible.com/ansible/guide_rolling_upgrade.html
   vars:
+    - verbose: true
     - w_nagios: false
     - w_haproxy: false
 #    - w_vm_snapshot: vbox
 #    - w_vm_snapshot: vmware
 #    - vm_host: localhost
 #    - vm_guest_name: {{ inventory_hostname }}
-#    - vm_snapshot_name: {{ ansible_date_time.date }}_{{ ansible_date_time.hour }}{{ ansible_date_time.minute }}{{ ansible_date_time.second }}-{{ inventory_hostname }}
+#    - vm_snapshot_name: "{{ ansible_date_time.date }}_{{ ansible_date_time.hour }}{{ ansible_date_time.minute }}{{ ansible_date_time.second }}-{{ inventory_hostname }}-auto"
 #    - vm_snapshot_description: 'Ansible playbook-upgrade automated snapshot'
 #    - vm_vsphere_id:
-    - noreboot: true   # if you want to disable necessary reboot
-    - vboxguest: true
+    - noreboot: true   # if you want to disable necessary reboot, list systems here
+    - vboxguest: true  # list VM
     - groups:
         monitoring:
         lbservers:
+    - upgrade_aidedb_rotate: 7
+#    - gem_upgrade_exclude_hosts:
+#    - gem_user:
+#    - pip_upgrade_exclude_hosts:
   pre_tasks:
+    - name: Debian | install required aptitude to manage upgrades
+      apt: name=aptitude state=present
+      when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
     - block:
         - name: disable nagios alerts for this host webserver service
           nagios: "action=disable_alerts host={{ inventory_hostname }} services=webserver"
-          delegate_to: "{{ groups.monitoring }}"
-#          delegate_to: "{{ item }}"
-#          with_items: "{{ groups.monitoring }}"
+          delegate_to: "{{ item }}"
+          with_items: "{{ groups.monitoring }}"
       when: w_nagios is defined and w_nagios
     - name: disable the server in haproxy
       debug: msg="FIXME!"
 #      shell: echo "disable server myapplb/{{ inventory_hostname }}" | socat stdio /var/lib/haproxy/stats
-#      delegate_to: "{{ item }}"
-#      with_items: "{{ groups.lbservers }}"
+      delegate_to: "{{ item }}"
+      with_items: "{{ groups.lbservers }}"
       when: w_haproxy is defined and w_haproxy
+    - stat: path=/usr/bin/falco
+      register: falcobin
+    - name: disable falco HIDS during upgrade
+      service: name=falco state=stopped
+      when: falcobin.stat.exists
+    - name: check existing vms on vm host - inventory user only
+      command: "VBoxManage list vms"
+      delegate_to: "{{ vm_host }}"
+      become: no
+      register: listvms
+      when: w_vm_snapshot is defined and w_vm_snapshot == 'vbox' and vm_host is defined and vm_list[{{ inventory_hostname }}] is defined
+      changed_when: false
+#    - debug: var=listvms.stdout_lines
+#    - debug: var="VBoxManage snapshot {{ vm_guest_name }} take {{ vm_snapshot_name }} --description '{{ vm_snapshot_description }}'"
+## OK but failed w The async task did not return valid JSON: No JSON object could be decoded"
     - name: take a snapshot of host on server - virtualbox
       command: "VBoxManage snapshot {{ vm_guest_name }} take {{ vm_snapshot_name }} --description '{{ vm_snapshot_description }}'"
       delegate_to: "{{ vm_host }}"
-      when: w_vm_snapshot is defined and w_vm_snapshot == 'vbox' and vm_host is defined
-      async: 3600
-      poll: 180
+      when: w_vm_snapshot is defined and w_vm_snapshot == 'vbox' and vm_host is defined and listvms.stdout.find("{{ vm_guest_name }}") != -1
+## BUG: https://github.com/ansible/ansible/issues/13965; https://github.com/ansible/ansible/issues/11240
+#      async: 3600
+#      poll: 180
+      become: no
 ## http://blog-lrivallain.rhcloud.com/2015/02/26/play-vm-snapshots-esxi-command-line-tools/
     - name: take a snapshot of host on server - vsphere
       command: "vim-cmd vmsvc/snapshot.create {{ vm_vsphere_id }} {{ vm_snapshot_name }} '{{ vm_snapshot_description }}' 1 1"
       delegate_to: "{{ vm_host }}"
-      when: w_vm_snapshot is defined and w_vm_snapshot == 'vbox' and vm_host is defined
+      when: w_vm_snapshot is defined and w_vm_snapshot == 'vsphere' and vm_host is defined
       async: 3600
       poll: 180
 ## Note: debian: if running, kill /etc/cron.daily/apt
@@ -67,253 +93,21 @@
   post_tasks:
     - name: Enable the server in haproxy
       shell: echo "enable server myapplb/{{ inventory_hostname }}" | socat stdio /var/lib/haproxy/stats
-      delegate_to: "{{ groups.lbservers }}"
-#      delegate_to: "{{ item }}"
-#      with_items: "{{ groups.lbservers }}"
+      delegate_to: "{{ item }}"
+      with_items: "{{ groups.lbservers }}"
       when: w_haproxy is defined and w_haproxy
     - name: re-enable nagios alerts
       nagios: action=enable_alerts host={{ inventory_hostname }} services=webserver
-      delegate_to: "{{ groups.monitoring }}"
-#      delegate_to: "{{ item }}"
-#      with_items: "{{ groups.monitoring }}"
+#      delegate_to: "{{ groups.monitoring }}"
+      delegate_to: "{{ item }}"
+      with_items: "{{ groups.monitoring }}"
       when: w_nagios is defined and w_nagios
+    - name: re-enable falco HIDS after upgrade
+      service: name=falco state=started
+      when: falcobin.stat.exists
 
-  tasks:
-## FIXME! http://askubuntu.com/questions/441921/why-does-usr-lib-update-notifier-apt-check-not-agree-with-apt-get-upgrade
-    - name: Debian | Check if there are packages available to be installed/upgraded
-      command: /usr/lib/update-notifier/apt-check --package-names
-      register: packages
-      when: (ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu')
-      changed_when: False
-      tags:
-        - upgrade
-
-#    - debug: var=packages
-
-## https://github.com/ansible/ansible/issues/11601
-## https://github.com/ansible/ansible-modules-core/issues/1741
-## = dist is not enough...
-    - name: Debian | upgrade all packages to the latest version (full)
-      apt: upgrade=full update_cache=yes cache_valid_time=3600
-      when: (ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu') and (packages is defined and packages.stderr != "")
-      tags:
-        - upgrade
-      async: 3600
-      poll: 180
-    - name: Debian | upgrade all packages to the latest version (dist)
-      apt: upgrade=dist update_cache=yes cache_valid_time=3600
-      when: (ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu') and (packages is defined and packages.stderr != "")
-      tags:
-        - upgrade
-      async: 3600
-      poll: 180
-
-#    - debug: var=file
-
-    - name: Redhat | upgrade all packages
-      yum: name=* state=latest update_cache=yes
-      when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
-      tags:
-        - upgrade
-      async: 3600
-      poll: 180
-
-    - name: OpenBSD | upgrade all packages
-      openbsd_pkg: name=* state=latest
-      when: ansible_distribution == 'OpenBSD'
-      tags:
-        - upgrade
-      async: 3600
-      poll: 180
-    
-    - name: Darwin | check for system upgrade
-      shell: "softwareupdate -l --no-scan"
-      register: darwinsu
-      when: ansible_os_family == "Darwin"
-      changed_when: false
-    - name: Darwin | system upgrade
-      shell: "softwareupdate --install --all | tee /tmp/softwareupdate.out"
-      when: ansible_os_family == "Darwin" and darwinsu.stderr.find("No new software available.") == -1
-      async: 3600
-      poll: 180
-## FIXME! not supported
-#    - name: Darwin | macports upgrade
-#      macports: name=* present=latest
-#      when: ansible_os_family == "Darwin"
-    
-
-    - name: apt | Check if packages need to be autoremoved
-      command: apt-get --dry-run autoremove
-      register: check_autoremove
-      changed_when: False
-      when: (ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu')
-    #- debug: var=check_autoremove
-    - name: apt | Autoremove unused packages
-      command: apt-get -y autoremove
-      #when: (ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu') and "'packages will be REMOVED' in check_autoremove.stdout"
-      when: (ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu') and check_autoremove.rc != 0
-
-    ## not needed if reboot
-    #- name: relink libraries
-    #  command: /sbin/ldconfig
-
-    ## Virtualbox guest additions?
-    ## https://github.com/BTBurke/skeleton-vagrant-ansible/blob/master/provisioning/vboxadditions.yaml
-    - name: host | check if Virtualbox installed
-      local_action: stat path=/usr/bin/virtualbox
-      register: localvbox
-      become: no
-      when: vboxguest is defined and vboxguest
-    #- debug: var=localvbox
-    - name: Find Host Virtualbox Version
-      become: no
-      local_action: shell virtualbox -h | awk '/Oracle VM VirtualBox Manager/ {split($0,a," "); print a[5]}'
-      #local_action: shell "virtualbox -h | awk '/Oracle VM VirtualBox Manager/ {split($0,a,\" \"); print a[5]}'" # NOK
-      register: hostV
-      when: localvbox.stat.exists and vboxguest is defined and vboxguest
-      changed_when: False
-
-    - name: Find Guest Additions Version
-      shell: "modinfo vboxguest | awk '/^version:/ { print $2 }'"
-      register: guestV
-      changed_when: False
-      when: vboxguest is defined and vboxguest
-
-#    - debug: var=hostV
-#    - debug: var=guestV
-    - stat: path=/vagrant/{{hostV.stdout}}/VBoxGuestAdditions_{{hostV.stdout}}.iso
-      register: vboxguestadditions
-      when: vboxguest is defined and vboxguest and hostV.stdout is defined
-    - name: Download Guest Additions Installer (when required)
-      get_url: dest=/vagrant url=http://download.virtualbox.org/virtualbox/{{hostV.stdout}}/VBoxGuestAdditions_{{hostV.stdout}}.iso 
-      when: hostV is defined and hostV.stdout != "" and guestV is defined and guestV.stdout != "" and hostV.stdout != guestV.stdout and not vboxguestadditions.stat.exists and vboxguest is defined and vboxguest
-
-    - stat: path=/vagrant/{{hostV.stdout}}/VBoxGuestAdditions_{{hostV.stdout}}.iso
-      register: vboxguestadditions
-      when: vboxguest is defined and vboxguest and hostV.stdout is defined
-    - name: Mount Guest Additions .iso (when required)
-      #shell: mount /tmp/VBoxGuestAdditions_{{hostV.stdout}}.iso -o loop /mnt creates=/mnt/VBoxLinuxAdditions.run
-      mount: name=/mnt src="/vagrant/VBoxGuestAdditions_{{hostV.stdout}}.iso" opts=loop,ro fstype=iso9660 state=mounted
-      when: hostV is defined and hostV.stdout != "" and guestV is defined and guestV.stdout != "" and hostV.stdout != guestV.stdout and vboxguest is defined and vboxguest and vboxguestadditions.stat.exists
-
-    ## as role/harden protection
-    - stat: path=/etc/apt/apt.conf.d/99security
-      register: hardenapt
-    - command: "chattr -R -i /lib"
-      ignore_errors: true
-      when: hardenapt.stat.exists and hostV is defined and hostV.stdout != "" and guestV is defined and guestV.stdout != "" and hostV.stdout != guestV.stdout and vboxguest is defined and vboxguest
-    - name: Install Guest Additions (when required)
-      shell: /mnt/VBoxLinuxAdditions.run --nox11 -- --force
-      when: hostV is defined and hostV.stdout != "" and guestV is defined and guestV.stdout != "" and hostV.stdout != guestV.stdout and vboxguest is defined and vboxguest
-      become: yes
-      ignore_errors: yes  # Need to ignore errors here because no windowing system is installed on server image.  No way to override. 
-    - command: "chattr -R +i /lib"
-      ignore_errors: true
-      when: hardenapt.stat.exists and hostV is defined and hostV.stdout != "" and guestV is defined and guestV.stdout != "" and hostV.stdout != guestV.stdout and vboxguest is defined and vboxguest
-
-#    - name: Halting the VM since Guest Additions Updated
-#      local_action: command vagrant halt
-#      become: no
-#      when: hostV.stdout != guestV.stdout
-
-#    - name: Restarting the VM without provisioning
-#      local_action: command vagrant up --no-provision
-#      become: no
-#      when: hostV.stdout != guestV.stdout
-
-    - name: apt | Mark VM for reboot since Guest Additions Updated
-      file: path=/var/run/reboot-required state=touch
-      when: (ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu') and hostV is defined and hostV.stdout != "" and guestV is defined and guestV.stdout != "" and hostV.stdout != guestV.stdout
-
-    ## FIXME! aide db update? mtree?
-    - stat: path=/usr/bin/aide
-      register: hidsaide
-      tags:
-        - aidehids
-    - stat: path=/var/lib/aide/aide.db
-      register: aideinit
-      tags:
-        - aidehids
-    - name: Debian | update aide database
-      shell: "{{ item }}"
-      with_items:
-        - aide.wrapper -u > /tmp/aide.log 2>&1
-        - savelog -c 14 aide.db
-        - mv /var/lib/aide/aide.db.new /var/lib/aide/aide.db
-      when: hidsaide.stat.exists and aideinit.stat.exists and (ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu') and ((packages is defined and packages.stderr != "") or (forceaide is defined and forceaide))
-      ignore_errors: true       # aide -u
-## aide can be very long but we don't want too long...
-      async: 3600
-      poll: 180
-      tags:
-        - aidehids
-    - name: Debian | init aide database
-      command: "{{ item }}"
-      with_items:
-        - aide.wrapper -i
-        - mv /var/lib/aide/aide.db.new /var/lib/aide/aide.db
-      when: hidsaide.stat.exists and not aideinit.stat.exists and (ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu') and ((packages is defined and packages.stderr != "") or (forceaide is defined and forceaide))
-      ignore_errors: true       # aide -i
-      tags:
-        - aidehids
-
-    - name: Redhat | update aide database
-      command: "{{ item }}"
-      with_items:
-        - aide -u
-        - savelog -c 14 aide.db
-        - mv /var/lib/aide/aide.db.new /var/lib/aide/aide.db
-      when: hidsaide.stat.exists and aideinit.stat.exists and (ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux') and ((packages is defined and packages.stderr != "") or (forceaide is defined and forceaide))
-      ignore_errors: true       # aide -u
-      tags:
-        - aidehids
-
-    ## FIXME! how to detect kernel upgrade and trigger extra check (ex: vbox driver if not DKMS)
-
-    - name: Debian | Check if a reboot is required
-      register: file
-      stat: path=/var/run/reboot-required get_md5=no
-      #when: (ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu') and packages.stderr != ""
-      when: (ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu')
-      tags:
-        - upgrade
-
-    - name: Need to reboot the server?
-      debug: msg="You will need to reboot system. asked ansible not doing it."
-      when: file.stat.exists is defined and file.stat.exists == true and noreboot
-    - name: Reboot the server
-      command: /sbin/reboot
-#      when: (ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu') and file.stat.exists == true and (noreboot is not defined or not noreboot)
-#      when: (ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu') and file.stat.exists == true and not noreboot
-      when: file.stat.exists is defined and file.stat.exists == true and not noreboot
-      async: 0
-      poll: 0
-
-#    ## no marker on redhat
-## http://serverfault.com/questions/671863/need-to-check-whether-you-need-to-reboot-for-a-kernel-update
-## http://stackoverflow.com/questions/22597424/ansible-detect-changes-in-certain-files-after-yum-update-and-do-a-reboot
-#    - name: Check for reboot hint.
-#      #shell: if [ $(readlink -f /vmlinuz) != /boot/vmlinuz-$(uname -r) ]; then echo 'reboot'; else echo 'no'; fi
-#      shell: if [ "`rpm -q kernel --queryformat '%{installtime} %{version}-%{release}.%{arch}\n' | sort -n -k1 | tail -1 | cut -d ' ' -f 2`" = "`uname -r`" ]; then echo "no"; else echo "reboot"; fi
-#      ignore_errors: true
-#      register: reboot_hint
-#      when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
-#    - name: Rebooting ...
-#      command: shutdown -r now "Ansible kernel update applied"
-#      async: 0
-#      poll: 0
-#      ignore_errors: true
-#      when: kernelup|changed or reboot_hint.stdout.find("reboot") != -1
-#      register: rebooting
-#      when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
-    
-    # or just halt ?
-
-#   - name: wait for the server to finish rebooting
-#     local_action: wait_for host="{{ inventory_hostname }}" search_regex=OpenSSH port=22 timeout=300
-
-    - name: waiting for server to come back
-      local_action: wait_for host={{ inventory_hostname }} state=started
-      become: false
-      when: file.stat.exists is defined and file.stat.exists == true and not noreboot
+  roles:
+#    - juju4.upgrade-pkgs-gem
+#    - juju4.upgrade-pkgs-pip
+    - juju4.upgrade-pkgs
 
