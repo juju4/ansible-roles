@@ -148,3 +148,27 @@
 [submodule "jdauphant.unbound"]
 	path = jdauphant.unbound
 	url = git@github.com:juju4/ansible-role-unbound.git
+[submodule "juju4.icinga2"]
+	path = juju4.icinga2
+	url = https://github.com/juju4/ansible-icinga2.git
+[submodule "juju4.smokeping"]
+	path = juju4.smokeping
+	url = https://github.com/juju4/ansible-smokeping.git
+[submodule "juju4.upgrade-pkgs"]
+	path = juju4.upgrade-pkgs
+	url = https://github.com/juju4/ansible-upgrade-pkgs.git
+[submodule "juju4.upgrade-pkgs-pip"]
+	path = juju4.upgrade-pkgs-pip
+	url = https://github.com/juju4/ansible-upgrade-pkgs-pip.git
+[submodule "juju4.upgrade-pkgs-gem"]
+	path = juju4.upgrade-pkgs-gem
+	url = https://github.com/juju4/ansible-upgrade-pkgs-gem.git
+[submodule "juju4.nrpeclient"]
+	path = juju4.nrpeclient
+	url = https://github.com/juju4/ansible-nrpeclient.git
+[submodule "juju4.snmpd"]
+	path = juju4.snmpd
+	url = https://github.com/juju4/ansible-snmpd.git
+[submodule "juju4.auditd"]
+	path = juju4.auditd
+	url = https://github.com/juju4/ansible-auditd.git
