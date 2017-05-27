@@ -130,3 +130,18 @@
 [submodule "MISP"]
 	path = MISP
 	url = git@github.com:juju4/ansible-MISP.git
+[submodule "remnux"]
+	path = remnux
+	url = git@github.com:juju4/ansible-remnux.git
+[submodule "sift"]
+	path = sift
+	url = git@github.com:juju4/ansible-sift.git
+[submodule "geerlingguy.java"]
+	path = geerlingguy.java
+	url = git@github.com:juju4/ansible-role-java.git
+[submodule "geerlingguy.nginx"]
+	path = geerlingguy.nginx
+	url = git@github.com:juju4/ansible-role-nginx.git
+[submodule "geerlingguy.jenkins"]
+	path = geerlingguy.jenkins
+	url = git@github.com:juju4/ansible-role-jenkins.git
