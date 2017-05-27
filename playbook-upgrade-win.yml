@@ -1,0 +1,38 @@
+---
+## https://pablodav.github.io/post/ansible_win/ansible_win_updates_patch_security/
+# file: windows-updates-all.yml
+
+- hosts: all
+  any_errors_fatal: false
+  serial:
+   - 1
+   - 5%
+   - 25%
+  max_fail_percentage: 10%
+  tasks:
+  # Check if there are missing updates
+  - name: Check for missing updates.
+    win_updates: state=searched
+    register: update_count
+    ignore_errors: yes
+
+  - name: Reboot if needed
+    win_reboot: 
+      shutdown_timeout_sec: 120
+      reboot_timeout_sec: 120
+    when: update_count.reboot_required
+    ignore_errors: yes
+
+  - name: Install missing updates.
+    win_updates:
+      category_names:
+        - CriticalUpdates
+        - SecurityUpdates
+    register: update_result
+
+  - name: Reboot if needed
+    win_shell: Restart-Computer -Force
+    when: update_result.reboot_required
+    ignore_errors: yes
+
+
