@@ -56,19 +56,19 @@
 	path = juju4.vortessence
 	url = git@github.com:juju4/ansible-vortessence.git
 [submodule "cis-ubuntu-ansible"]
-	path = juju4.cis-ubuntu-ansible
+	path = cis-ubuntu-ansible
 	url = git@github.com:juju4/cis-ubuntu-ansible.git
 [submodule "cis-rhel-ansible"]
-	path = juju4.cis-rhel-ansible
+	path = cis-rhel-ansible
 	url = git@github.com:juju4/cis-rhel-ansible.git
 [submodule "bakhti.elk"]
-	path = juju4.bakhti.elk
+	path = bakhti.elk
 	url = git@github.com:juju4/ansible-elk.git
 [submodule "dj-wasabi.ossec-agent"]
-	path = juju4.dj-wasabi.ossec-agent
+	path = dj-wasabi.ossec-agent
 	url = git@github.com:juju4/ansible-ossec-agent.git
 [submodule "dj-wasabi.ossec-server"]
-	path = juju4.dj-wasabi.ossec-server
+	path = dj-wasabi.ossec-server
 	url = git@github.com:juju4/ansible-ossec-server.git
 [submodule "monclient"]
 	path = juju4.monclient
