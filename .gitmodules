@@ -172,3 +172,120 @@
 [submodule "juju4.auditd"]
 	path = juju4.auditd
 	url = https://github.com/juju4/ansible-auditd.git
+[submodule "juju4.harden-windows"]
+	path = juju4.harden-windows
+	url = git@github.com:juju4/ansible-harden-windows.git
+[submodule "juju4.harden-sysctl"]
+	path = juju4.harden-sysctl
+	url = git@github.com:juju4/ansible-harden-sysctl.git
+[submodule "juju4.harden-darwin"]
+	path = juju4.harden-darwin
+	url = git@github.com:juju4/ansible-harden-darwin.git
+[submodule "juju4.ipv6"]
+	path = juju4.ipv6
+	url = git@github.com:juju4/ansible-ipv6.git
+[submodule "juju4.mhnclient"]
+	path = juju4.mhnclient
+	url = git@github.com:juju4/ansible-mhnclient.git
+[submodule "juju4.golang"]
+	path = juju4.golang
+	url = git@github.com:juju4/ansible-golang.git
+[submodule "juju4.rekall"]
+	path = juju4.rekall
+	url = git@github.com:juju4/ansible-rekall.git
+[submodule "juju4.jenkinsenv"]
+	path = juju4.jenkinsenv
+	url = git@github.com:juju4/ansible-jenkinsenv.git
+[submodule "juju4.lxd"]
+	path = juju4.lxd
+	url = git@github.com:juju4/ansible-lxd.git
+[submodule "juju4.lxdconfigure"]
+	path = juju4.lxdconfigure
+	url = git@github.com:juju4/ansible-lxdconfigure.git
+[submodule "juju4.vivisect"]
+	path = juju4.vivisect
+	url = git@github.com:juju4/ansible-vivisect.git
+[submodule "juju4.orchestrator"]
+	path = juju4.orchestrator
+	url = git@github.com:juju4/ansible-orchestrator.git
+[submodule "juju4.macos-apps-install"]
+	path = juju4.macos-apps-install
+	url = git@github.com:juju4/ansible-macos-apps-install.git
+[submodule "juju4.macos-sleepwatcher"]
+	path = juju4.macos-sleepwatcher
+	url = git@github.com:juju4/ansible-macos-sleepwatcher.git
+[submodule "juju4.harden-nginx"]
+	path = juju4.harden-nginx
+	url = git@github.com:juju4/ansible-harden-nginx.git
+[submodule "juju4.harden-apache"]
+	path = juju4.harden-apache
+	url = git@github.com:juju4/ansible-harden-apache.git
+[submodule "juju4.kitchen"]
+	path = juju4.kitchen
+	url = git@github.com:juju4/ansible-kitchen.git
+[submodule "juju4.jenkins"]
+	path = juju4.jenkins
+	url = git@github.com:juju4/ansible-jenkins.git
+[submodule "juju4.volatility"]
+	path = juju4.volatility
+	url = git@github.com:juju4/ansible-volatility.git
+[submodule "juju4.zentral"]
+	path = juju4.zentral
+	url = git@github.com:juju4/ansible-zentral.git
+[submodule "juju4.jenkinsslave"]
+	path = juju4.jenkinsslave
+	url = git@github.com:juju4/ansible-jenkinsslave.git
+[submodule "juju4.vector"]
+	path = juju4.vector
+	url = git@github.com:juju4/ansible-vector.git
+[submodule "juju4.ipt-netflow"]
+	path = juju4.ipt-netflow
+	url = git@github.com:juju4/ansible-ipt-netflow.git
+[submodule "juju4.fprobe"]
+	path = juju4.fprobe
+	url = git@github.com:juju4/ansible-fprobe.git
+[submodule "juju4.tlsh"]
+	path = juju4.tlsh
+	url = git@github.com:juju4/ansible-tlsh.git
+[submodule "juju4.cuckoo-sandbox"]
+	path = juju4.cuckoo-sandbox
+	url = git@github.com:juju4/ansible-cuckoo-sandbox.git
+[submodule "juju4.gift"]
+	path = juju4.gift
+	url = git@github.com:juju4/ansible-gift.git
+[submodule "juju4.timesketch"]
+	path = juju4.timesketch
+	url = git@github.com:juju4/ansible-timesketch.git
+[submodule "juju4.redhat-epel"]
+	path = juju4.redhat-epel
+	url = git@github.com:juju4/ansible-redhat-epel.git
+[submodule "juju4.ail-framework"]
+	path = juju4.ail-framework
+	url = git@github.com:juju4/ansible-ail-framework.git
+[submodule "juju4.bind"]
+	path = juju4.bind
+	url = git@github.com:juju4/ansible-bind.git
+[submodule "juju4.harden-mailserver"]
+	path = juju4.harden-mailserver
+	url = git@github.com:juju4/ansible-harden-mailserver.git
+[submodule "juju4.redis-leveldb"]
+	path = juju4.redis-leveldb
+	url = git@github.com:juju4/ansible-redis-leveldb.git
+[submodule "juju4.faup"]
+	path = juju4.faup
+	url = git@github.com:juju4/ansible-faup.git
+[submodule "juju4.ipsumdump"]
+	path = juju4.ipsumdump
+	url = git@github.com:juju4/ansible-ipsumdump.git
+[submodule "juju4.falco"]
+	path = juju4.falco
+	url = git@github.com:juju4/ansible-falco.git
+[submodule "juju4.pystemon"]
+	path = juju4.pystemon
+	url = git@github.com:juju4/ansible-pystemon.git
+[submodule "juju4.firefox-config"]
+	path = juju4.firefox-config
+	url = git@github.com:juju4/ansible-firefox-config.git
+[submodule "juju4.chrome-config"]
+	path = juju4.chrome-config
+	url = git@github.com:juju4/ansible-chrome-config.git
