@@ -301,3 +301,6 @@
 [submodule "geerlingguy.postgresql"]
 	path = geerlingguy.postgresql
 	url = git@github.com:juju4/ansible-role-postgresql.git
+[submodule "cmprescott.xml"]
+	path = cmprescott.xml
+	url = https://github.com/cmprescott/ansible-xml.git
