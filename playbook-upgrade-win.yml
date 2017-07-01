@@ -1,5 +1,6 @@
 ---
 ## https://pablodav.github.io/post/ansible_win/ansible_win_updates_patch_security/
+## https://www.virtualtothecore.com/en/patching-windows-servers-ansible/
 # file: windows-updates-all.yml
 
 - hosts: all

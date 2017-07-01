@@ -289,3 +289,15 @@
 [submodule "juju4.chrome-config"]
 	path = juju4.chrome-config
 	url = git@github.com:juju4/ansible-chrome-config.git
+[submodule "juju4.up1"]
+	path = juju4.up1
+	url = git@github.com:juju4/ansible-up1.git
+[submodule "noplanman.lufi"]
+	path = noplanman.lufi
+	url = git@github.com:juju4/ansible-lufi.git
+[submodule "juju4.forensicator-fate"]
+	path = juju4.forensicator-fate
+	url = git@github.com:juju4/ansible-forensicator-fate.git
+[submodule "geerlingguy.postgresql"]
+	path = geerlingguy.postgresql
+	url = git@github.com:juju4/ansible-role-postgresql.git
