@@ -165,7 +165,7 @@
 	url = https://github.com/juju4/ansible-upgrade-pkgs-gem.git
 [submodule "juju4.nrpeclient"]
 	path = juju4.nrpeclient
-	url = https://github.com/juju4/ansible-nrpeclient.git
+	url = git@github.com:juju4/ansible-nrpeclient.git
 [submodule "juju4.snmpd"]
 	path = juju4.snmpd
 	url = https://github.com/juju4/ansible-snmpd.git
@@ -304,3 +304,6 @@
 [submodule "cmprescott.xml"]
 	path = cmprescott.xml
 	url = https://github.com/cmprescott/ansible-xml.git
+[submodule "juju4.floss"]
+	path = juju4.floss
+	url = git@github.com:juju4/ansible-floss.git
