@@ -307,3 +307,45 @@
 [submodule "juju4.floss"]
 	path = juju4.floss
 	url = git@github.com:juju4/ansible-floss.git
+[submodule "juju4.kolide"]
+	path = juju4.kolide
+	url = git@github.com:juju4/ansible-kolide.git
+[submodule "juju4.win-osquery"]
+	path = juju4.win-osquery
+	url = git@github.com:juju4/ansible-win-osquery.git
+[submodule "juju4.win-eventlog"]
+	path = juju4.win-eventlog
+	url = git@github.com:juju4/ansible-win-eventlog.git
+[submodule "juju4.caldera"]
+	path = juju4.caldera
+	url = git@github.com:juju4/ansible-caldera.git
+[submodule "juju4.caldera-agent"]
+	path = juju4.caldera-agent
+	url = git@github.com:juju4/ansible-caldera-agent.git
+[submodule "juju4.win-ad-monitor"]
+	path = juju4.win-ad-monitor
+	url = git@github.com:juju4/ansible-win-ad-monitor.git
+[submodule "juju4.macos-yubikey"]
+	path = juju4.macos-yubikey
+	url = git@github.com:juju4/ansible-macos-yubikey.git
+[submodule "juju4.win-powershell"]
+	path = juju4.win-powershell
+	url = git@github.com:juju4/ansible-win-powershell.git
+[submodule "juju4.win-msoffice"]
+	path = juju4.win-msoffice
+	url = git@github.com:juju4/ansible-win-msoffice.git
+[submodule "juju4.win-firewall"]
+	path = juju4.win-firewall
+	url = git@github.com:juju4/ansible-win-firewall.git
+[submodule "juju4.win-services"]
+	path = juju4.win-services
+	url = git@github.com:juju4/ansible-win-services.git
+[submodule "juju4.win-atomic-red-team"]
+	path = juju4.win-atomic-red-team
+	url = git@github.com:juju4/ansible-win-atomic-red-team.git
+[submodule "juju4.win-sysmon"]
+	path = juju4.win-sysmon
+	url = git@github.com:juju4/ansible-win-sysmon.git
+[submodule "juju4.win-aptsimulator"]
+	path = juju4.win-aptsimulator
+	url = git@github.com:juju4/ansible-win-aptsimulator.git
