@@ -70,9 +70,6 @@
 [submodule "monclient"]
 	path = juju4.monclient
 	url = git@github.com:juju4/ansible-monclient.git
-[submodule "dnscrypt-proxy"]
-	path = juju4.dnscrypt-proxy
-	url = git@github.com:juju4/ansible-dnscrypt-proxy.git
 [submodule "swap"]
 	path = juju4.swap
 	url = git@github.com:juju4/ansible-swap.git
@@ -349,3 +346,6 @@
 [submodule "juju4.cuckoo_sandbox"]
 	path = juju4.cuckoo_sandbox
 	url = git@github.com:juju4/ansible-cuckoo-sandbox.git
+[submodule "juju4.dnscryptproxy"]
+	path = juju4.dnscryptproxy
+	url = git@github.com:juju4/ansible-dnscrypt-proxy.git
