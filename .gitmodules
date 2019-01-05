@@ -241,9 +241,6 @@
 [submodule "juju4.tlsh"]
 	path = juju4.tlsh
 	url = git@github.com:juju4/ansible-tlsh.git
-[submodule "juju4.cuckoo-sandbox"]
-	path = juju4.cuckoo-sandbox
-	url = git@github.com:juju4/ansible-cuckoo-sandbox.git
 [submodule "juju4.gift"]
 	path = juju4.gift
 	url = git@github.com:juju4/ansible-gift.git
@@ -349,3 +346,6 @@
 [submodule "juju4.chrome_config"]
 	path = juju4.chrome_config
 	url = git@github.com:juju4/ansible-chrome-config.git
+[submodule "juju4.cuckoo_sandbox"]
+	path = juju4.cuckoo_sandbox
+	url = git@github.com:juju4/ansible-cuckoo-sandbox.git
