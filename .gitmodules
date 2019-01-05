@@ -256,9 +256,6 @@
 [submodule "juju4.timesketch"]
 	path = juju4.timesketch
 	url = git@github.com:juju4/ansible-timesketch.git
-[submodule "juju4.ail-framework"]
-	path = juju4.ail-framework
-	url = git@github.com:juju4/ansible-ail-framework.git
 [submodule "juju4.bind"]
 	path = juju4.bind
 	url = git@github.com:juju4/ansible-bind.git
@@ -349,3 +346,6 @@
 [submodule "juju4.redhat_epel"]
 	path = juju4.redhat_epel
 	url = git@github.com:juju4/ansible-redhat-epel.git
+[submodule "juju4.ail_framework"]
+	path = juju4.ail_framework
+	url = git@github.com:juju4/ansible-ail-framework.git
