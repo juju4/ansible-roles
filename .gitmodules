@@ -208,9 +208,6 @@
 [submodule "juju4.harden-nginx"]
 	path = juju4.harden-nginx
 	url = git@github.com:juju4/ansible-harden-nginx.git
-[submodule "juju4.harden-apache"]
-	path = juju4.harden-apache
-	url = git@github.com:juju4/ansible-harden-apache.git
 [submodule "juju4.kitchen"]
 	path = juju4.kitchen
 	url = git@github.com:juju4/ansible-kitchen.git
@@ -349,3 +346,6 @@
 [submodule "juju4.firefox_config"]
 	path = juju4.firefox_config
 	url = git@github.com:juju4/ansible-firefox-config.git
+[submodule "juju4.harden_apache"]
+	path = juju4.harden_apache
+	url = git@github.com:juju4/ansible-harden-apache.git
