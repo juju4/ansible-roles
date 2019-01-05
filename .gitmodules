@@ -37,9 +37,6 @@
 [submodule "icinga2"]
 	path = juju4.icinga2
 	url = git@github.com:juju4/ansible-icinga2.git
-[submodule "bro-ids"]
-	path = juju4.bro-ids
-	url = git@github.com:juju4/ansible-bro-ids.git
 [submodule "syslogclient"]
 	path = juju4.syslogclient
 	url = git@github.com:juju4/ansible-syslogclient.git
@@ -349,3 +346,6 @@
 [submodule "juju4.aptcacherngclient"]
 	path = juju4.aptcacherngclient
 	url = git@github.com:juju4/ansible-apt-cacher-ng-client.git
+[submodule "juju4.broids"]
+	path = juju4.broids
+	url = git@github.com:juju4/ansible-bro-ids.git
