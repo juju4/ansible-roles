@@ -307,9 +307,6 @@
 [submodule "juju4.caldera"]
 	path = juju4.caldera
 	url = git@github.com:juju4/ansible-caldera.git
-[submodule "juju4.caldera-agent"]
-	path = juju4.caldera-agent
-	url = git@github.com:juju4/ansible-caldera-agent.git
 [submodule "juju4.win-ad-monitor"]
 	path = juju4.win-ad-monitor
 	url = git@github.com:juju4/ansible-win-ad-monitor.git
@@ -349,3 +346,6 @@
 [submodule "juju4.broids"]
 	path = juju4.broids
 	url = git@github.com:juju4/ansible-bro-ids.git
+[submodule "juju4.caldera_agent"]
+	path = juju4.caldera_agent
+	url = git@github.com:juju4/ansible-caldera-agent.git
