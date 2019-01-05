@@ -214,9 +214,6 @@
 [submodule "juju4.vector"]
 	path = juju4.vector
 	url = git@github.com:juju4/ansible-vector.git
-[submodule "juju4.ipt-netflow"]
-	path = juju4.ipt-netflow
-	url = git@github.com:juju4/ansible-ipt-netflow.git
 [submodule "juju4.fprobe"]
 	path = juju4.fprobe
 	url = git@github.com:juju4/ansible-fprobe.git
@@ -349,3 +346,6 @@
 [submodule "juju4.harden_windows"]
 	path = juju4.harden_windows
 	url = git@github.com:juju4/ansible-harden-windows.git
+[submodule "juju4.iptnetflow"]
+	path = juju4.iptnetflow
+	url = git@github.com:juju4/ansible-ipt-netflow.git
