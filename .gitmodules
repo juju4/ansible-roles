@@ -241,9 +241,6 @@
 [submodule "juju4.bind"]
 	path = juju4.bind
 	url = git@github.com:juju4/ansible-bind.git
-[submodule "juju4.harden-mailserver"]
-	path = juju4.harden-mailserver
-	url = git@github.com:juju4/ansible-harden-mailserver.git
 [submodule "juju4.redis-leveldb"]
 	path = juju4.redis-leveldb
 	url = git@github.com:juju4/ansible-redis-leveldb.git
@@ -349,3 +346,6 @@
 [submodule "juju4.harden_darwin"]
 	path = juju4.harden_darwin
 	url = git@github.com:juju4/ansible-harden-darwin.git
+[submodule "juju4.harden_mailserver"]
+	path = juju4.harden_mailserver
+	url = git@github.com:juju4/ansible-harden-mailserver.git
