@@ -202,9 +202,6 @@
 [submodule "juju4.macos-sleepwatcher"]
 	path = juju4.macos-sleepwatcher
 	url = git@github.com:juju4/ansible-macos-sleepwatcher.git
-[submodule "juju4.harden-nginx"]
-	path = juju4.harden-nginx
-	url = git@github.com:juju4/ansible-harden-nginx.git
 [submodule "juju4.kitchen"]
 	path = juju4.kitchen
 	url = git@github.com:juju4/ansible-kitchen.git
@@ -349,3 +346,6 @@
 [submodule "juju4.harden_mailserver"]
 	path = juju4.harden_mailserver
 	url = git@github.com:juju4/ansible-harden-mailserver.git
+[submodule "juju4.harden_nginx"]
+	path = juju4.harden_nginx
+	url = git@github.com:juju4/ansible-harden-nginx.git
