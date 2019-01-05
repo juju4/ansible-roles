@@ -166,9 +166,6 @@
 [submodule "juju4.harden-windows"]
 	path = juju4.harden-windows
 	url = git@github.com:juju4/ansible-harden-windows.git
-[submodule "juju4.harden-sysctl"]
-	path = juju4.harden-sysctl
-	url = git@github.com:juju4/ansible-harden-sysctl.git
 [submodule "juju4.ipv6"]
 	path = juju4.ipv6
 	url = git@github.com:juju4/ansible-ipv6.git
@@ -349,3 +346,6 @@
 [submodule "juju4.harden_nginx"]
 	path = juju4.harden_nginx
 	url = git@github.com:juju4/ansible-harden-nginx.git
+[submodule "juju4.harden_sysctl"]
+	path = juju4.harden_sysctl
+	url = git@github.com:juju4/ansible-harden-sysctl.git
