@@ -73,9 +73,6 @@
 [submodule "monclient"]
 	path = juju4.monclient
 	url = git@github.com:juju4/ansible-monclient.git
-[submodule "apt-cacher-ng-client"]
-	path = juju4.apt-cacher-ng-client
-	url = git@github.com:juju4/ansible-apt-cacher-ng-client.git
 [submodule "dnscrypt-proxy"]
 	path = juju4.dnscrypt-proxy
 	url = git@github.com:juju4/ansible-dnscrypt-proxy.git
@@ -349,3 +346,6 @@
 [submodule "juju4.ail_framework"]
 	path = juju4.ail_framework
 	url = git@github.com:juju4/ansible-ail-framework.git
+[submodule "juju4.aptcacherngclient"]
+	path = juju4.aptcacherngclient
+	url = git@github.com:juju4/ansible-apt-cacher-ng-client.git
