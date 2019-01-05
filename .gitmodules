@@ -127,9 +127,6 @@
 [submodule "brianshumate.hubot"]
 	path = brianshumate.hubot
 	url = git@github.com:juju4/ansible-hubot.git
-[submodule "kbrebanov.osquery"]
-	path = kbrebanov.osquery
-	url = git@github.com:juju4/ansible-osquery.git
 [submodule "Stouts.openvpn"]
 	path = Stouts.openvpn
 	url = git@github.com:juju4/Stouts.openvpn.git
@@ -349,3 +346,6 @@
 [submodule "juju4.iptnetflow"]
 	path = juju4.iptnetflow
 	url = git@github.com:juju4/ansible-ipt-netflow.git
+[submodule "juju4.osquery"]
+	path = juju4.osquery
+	url = git@github.com:juju4/ansible-osquery.git
