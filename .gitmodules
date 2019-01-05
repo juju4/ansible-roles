@@ -265,9 +265,6 @@
 [submodule "juju4.pystemon"]
 	path = juju4.pystemon
 	url = git@github.com:juju4/ansible-pystemon.git
-[submodule "juju4.firefox-config"]
-	path = juju4.firefox-config
-	url = git@github.com:juju4/ansible-firefox-config.git
 [submodule "juju4.up1"]
 	path = juju4.up1
 	url = git@github.com:juju4/ansible-up1.git
@@ -349,3 +346,6 @@
 [submodule "juju4.dnscryptproxy"]
 	path = juju4.dnscryptproxy
 	url = git@github.com:juju4/ansible-dnscrypt-proxy.git
+[submodule "juju4.firefox_config"]
+	path = juju4.firefox_config
+	url = git@github.com:juju4/ansible-firefox-config.git
