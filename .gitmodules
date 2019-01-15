@@ -349,3 +349,18 @@
 [submodule "juju4.osquery"]
 	path = juju4.osquery
 	url = git@github.com:juju4/ansible-osquery.git
+[submodule "juju4.w3af"]
+	path = juju4.w3af
+	url = git@github.com:juju4/ansible-w3af.git
+[submodule "juju4.win_applocker"]
+	path = juju4.win_applocker
+	url = git@github.com:juju4/ansible-win-applocker.git
+[submodule "juju4.win_audit"]
+	path = juju4.win_audit
+	url = git@github.com:juju4/ansible-win-audit.git
+[submodule "juju4.nfsen"]
+	path = juju4.nfsen
+	url = git@github.com:juju4/ansible-nfsen.git
+[submodule "geerlingguy.kibana"]
+	path = geerlingguy.kibana
+	url = git@github.com:juju4/ansible-role-kibana
