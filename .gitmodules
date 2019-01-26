@@ -109,8 +109,8 @@
 [submodule "sift"]
 	path = juju4.sift
 	url = git@github.com:juju4/ansible-sift.git
-[submodule "upgrade-pkgs"]
-	path = juju4.upgrade-pkgs
+[submodule "upgrade_pkgs"]
+	path = juju4.upgrade_pkgs
 	url = git@github.com:juju4/ansible-upgrade-pkgs.git
 [submodule "Mayeu.RabbitMQ"]
 	path = Mayeu.RabbitMQ
@@ -142,15 +142,6 @@
 [submodule "juju4.smokeping"]
 	path = juju4.smokeping
 	url = https://github.com/juju4/ansible-smokeping.git
-[submodule "juju4.upgrade-pkgs"]
-	path = juju4.upgrade-pkgs
-	url = https://github.com/juju4/ansible-upgrade-pkgs.git
-[submodule "juju4.upgrade-pkgs-pip"]
-	path = juju4.upgrade-pkgs-pip
-	url = https://github.com/juju4/ansible-upgrade-pkgs-pip.git
-[submodule "juju4.upgrade-pkgs-gem"]
-	path = juju4.upgrade-pkgs-gem
-	url = https://github.com/juju4/ansible-upgrade-pkgs-gem.git
 [submodule "juju4.nrpeclient"]
 	path = juju4.nrpeclient
 	url = git@github.com:juju4/ansible-nrpeclient.git
@@ -187,12 +178,6 @@
 [submodule "juju4.orchestrator"]
 	path = juju4.orchestrator
 	url = git@github.com:juju4/ansible-orchestrator.git
-[submodule "juju4.macos-apps-install"]
-	path = juju4.macos-apps-install
-	url = git@github.com:juju4/ansible-macos-apps-install.git
-[submodule "juju4.macos-sleepwatcher"]
-	path = juju4.macos-sleepwatcher
-	url = git@github.com:juju4/ansible-macos-sleepwatcher.git
 [submodule "juju4.kitchen"]
 	path = juju4.kitchen
 	url = git@github.com:juju4/ansible-kitchen.git
@@ -262,42 +247,9 @@
 [submodule "juju4.kolide"]
 	path = juju4.kolide
 	url = git@github.com:juju4/ansible-kolide.git
-[submodule "juju4.win-osquery"]
-	path = juju4.win-osquery
-	url = git@github.com:juju4/ansible-win-osquery.git
-[submodule "juju4.win-eventlog"]
-	path = juju4.win-eventlog
-	url = git@github.com:juju4/ansible-win-eventlog.git
 [submodule "juju4.caldera"]
 	path = juju4.caldera
 	url = git@github.com:juju4/ansible-caldera.git
-[submodule "juju4.win-ad-monitor"]
-	path = juju4.win-ad-monitor
-	url = git@github.com:juju4/ansible-win-ad-monitor.git
-[submodule "juju4.macos-yubikey"]
-	path = juju4.macos-yubikey
-	url = git@github.com:juju4/ansible-macos-yubikey.git
-[submodule "juju4.win-powershell"]
-	path = juju4.win-powershell
-	url = git@github.com:juju4/ansible-win-powershell.git
-[submodule "juju4.win-msoffice"]
-	path = juju4.win-msoffice
-	url = git@github.com:juju4/ansible-win-msoffice.git
-[submodule "juju4.win-firewall"]
-	path = juju4.win-firewall
-	url = git@github.com:juju4/ansible-win-firewall.git
-[submodule "juju4.win-services"]
-	path = juju4.win-services
-	url = git@github.com:juju4/ansible-win-services.git
-[submodule "juju4.win-atomic-red-team"]
-	path = juju4.win-atomic-red-team
-	url = git@github.com:juju4/ansible-win-atomic-red-team.git
-[submodule "juju4.win-sysmon"]
-	path = juju4.win-sysmon
-	url = git@github.com:juju4/ansible-win-sysmon.git
-[submodule "juju4.win-aptsimulator"]
-	path = juju4.win-aptsimulator
-	url = git@github.com:juju4/ansible-win-aptsimulator.git
 [submodule "juju4.redhat_epel"]
 	path = juju4.redhat_epel
 	url = git@github.com:juju4/ansible-redhat-epel.git
@@ -364,3 +316,48 @@
 [submodule "geerlingguy.kibana"]
 	path = geerlingguy.kibana
 	url = git@github.com:juju4/ansible-role-kibana
+[submodule "juju4.win_ad_monitor"]
+	path = juju4.win_ad_monitor
+	url = git@github.com:juju4/ansible-win-ad-monitor.git
+[submodule "juju4.win_aptsimulator"]
+	path = juju4.win_aptsimulator
+	url = git@github.com:juju4/ansible-win-aptsimulator.git
+[submodule "juju4.win_atomic_red_team"]
+	path = juju4.win_atomic_red_team
+	url = git@github.com:juju4/ansible-win-atomic-red-team.git
+[submodule "juju4.win_eventlog"]
+	path = juju4.win_eventlog
+	url = git@github.com:juju4/ansible-win-eventlog.git
+[submodule "juju4.win_firewall"]
+	path = juju4.win_firewall
+	url = git@github.com:juju4/ansible-win-firewall.git
+[submodule "juju4.win_msoffice"]
+	path = juju4.win_msoffice
+	url = git@github.com:juju4/ansible-win-msoffice.git
+[submodule "juju4.win_osquery"]
+	path = juju4.win_osquery
+	url = git@github.com:juju4/ansible-win-osquery.git
+[submodule "juju4.win_powershell"]
+	path = juju4.win_powershell
+	url = git@github.com:juju4/ansible-win-powershell.git
+[submodule "juju4.win_services"]
+	path = juju4.win_services
+	url = git@github.com:juju4/ansible-win-services.git
+[submodule "juju4.win_sysmon"]
+	path = juju4.win_sysmon
+	url = git@github.com:juju4/ansible-win-sysmon.git
+[submodule "juju4.macos_apps_install"]
+	path = juju4.macos_apps_install
+	url = git@github.com:juju4/ansible-macos-apps-install.git
+[submodule "juju4.macos_sleepwatcher"]
+	path = juju4.macos_sleepwatcher
+	url = git@github.com:juju4/ansible-macos-sleepwatcher.git
+[submodule "juju4.macos_yubikey"]
+	path = juju4.macos_yubikey
+	url = git@github.com:juju4/ansible-macos-yubikey.git
+[submodule "juju4.upgrade_pkgs_gem"]
+	path = juju4.upgrade_pkgs_gem
+	url = https://github.com/juju4/ansible-upgrade-pkgs-gem.git
+[submodule "juju4.upgrade_pkgs_pip"]
+	path = juju4.upgrade_pkgs_pip
+	url = https://github.com/juju4/ansible-upgrade-pkgs-pip.git
