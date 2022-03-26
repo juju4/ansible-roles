@@ -376,3 +376,6 @@
 [submodule "juju4.brim"]
 	path = juju4.brim
 	url = git@github.com:juju4/ansible-brim.git
+[submodule "juju4.xrdp"]
+	path = juju4.xrdp
+	url = git@github.com:juju4/ansible-xrdp.git
