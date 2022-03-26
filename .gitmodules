@@ -385,3 +385,6 @@
 [submodule "juju4.polarproxy"]
 	path = juju4.polarproxy
 	url = git@github.com:juju4/ansible-polarproxy.git
+[submodule "juju4.fact"]
+	path = juju4.fact
+	url = git@github.com:juju4/ansible-fact.git
