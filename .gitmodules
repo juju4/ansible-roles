@@ -388,3 +388,6 @@
 [submodule "juju4.fact"]
 	path = juju4.fact
 	url = git@github.com:juju4/ansible-fact.git
+[submodule "geerlingguy.docker"]
+	path = geerlingguy.docker
+	url = https://github.com/geerlingguy/ansible-role-docker.git
