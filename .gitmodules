@@ -379,3 +379,6 @@
 [submodule "juju4.xrdp"]
 	path = juju4.xrdp
 	url = git@github.com:juju4/ansible-xrdp.git
+[submodule "juju4.sysmon"]
+	path = juju4.sysmon
+	url = git@github.com:juju4/ansible-sysmon.git
