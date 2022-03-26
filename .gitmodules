@@ -373,3 +373,6 @@
 [submodule "juju4.hashlookupserver"]
 	path = juju4.hashlookupserver
 	url = git@github.com:juju4/ansible-hashlookupserver.git
+[submodule "juju4.brim"]
+	path = juju4.brim
+	url = git@github.com:juju4/ansible-brim.git
