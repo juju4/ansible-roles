@@ -367,3 +367,6 @@
 [submodule "juju4.harden_ima"]
 	path = juju4.harden_ima
 	url = git@github.com:juju4/ansible-harden-ima.git
+[submodule "juju4.kvrocks"]
+	path = juju4.kvrocks
+	url = git@github.com:juju4/ansible-kvrocks.git
