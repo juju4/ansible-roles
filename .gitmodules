@@ -394,3 +394,6 @@
 [submodule "juju4.tinyproxy"]
 	path = juju4.tinyproxy
 	url = git@github.com:juju4/ansible-tinyproxy.git
+[submodule "juju4.zeek"]
+	path = juju4.zeek
+	url = git@github.com:juju4/ansible-zeek.git
