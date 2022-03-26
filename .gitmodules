@@ -361,3 +361,6 @@
 [submodule "juju4.upgrade_pkgs_pip"]
 	path = juju4.upgrade_pkgs_pip
 	url = https://github.com/juju4/ansible-upgrade-pkgs-pip.git
+[submodule "juju4.harden_systemd"]
+	path = juju4.harden_systemd
+	url = git@github.com:juju4/ansible-harden-systemd.git
