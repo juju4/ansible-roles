@@ -364,3 +364,6 @@
 [submodule "juju4.harden_systemd"]
 	path = juju4.harden_systemd
 	url = git@github.com:juju4/ansible-harden-systemd.git
+[submodule "juju4.harden_ima"]
+	path = juju4.harden_ima
+	url = git@github.com:juju4/ansible-harden-ima.git
