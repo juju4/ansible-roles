@@ -382,3 +382,6 @@
 [submodule "juju4.sysmon"]
 	path = juju4.sysmon
 	url = git@github.com:juju4/ansible-sysmon.git
+[submodule "juju4.polarproxy"]
+	path = juju4.polarproxy
+	url = git@github.com:juju4/ansible-polarproxy.git
