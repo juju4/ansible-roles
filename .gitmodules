@@ -391,3 +391,6 @@
 [submodule "geerlingguy.docker"]
 	path = geerlingguy.docker
 	url = https://github.com/geerlingguy/ansible-role-docker.git
+[submodule "juju4.tinyproxy"]
+	path = juju4.tinyproxy
+	url = git@github.com:juju4/ansible-tinyproxy.git
