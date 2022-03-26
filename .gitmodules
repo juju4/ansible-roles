@@ -370,3 +370,6 @@
 [submodule "juju4.kvrocks"]
 	path = juju4.kvrocks
 	url = git@github.com:juju4/ansible-kvrocks.git
+[submodule "juju4.hashlookupserver"]
+	path = juju4.hashlookupserver
+	url = git@github.com:juju4/ansible-hashlookupserver.git
