@@ -7,9 +7,6 @@
 [submodule "sysdigcapture"]
 	path = juju4.sysdigcapture
 	url = git@github.com:juju4/ansible-sysdigcapture.git
-[submodule "sketchy"]
-	path = juju4.sketchy
-	url = git@github.com:juju4/ansible-sketchy.git
 [submodule "scumblr"]
 	path = juju4.scumblr
 	url = git@github.com:juju4/ansible-scumblr.git
@@ -19,18 +16,9 @@
 [submodule "loki"]
 	path = juju4.loki
 	url = git@github.com:juju4/ansible-loki.git
-[submodule "fastir"]
-	path = juju4.fastir
-	url = git@github.com:juju4/ansible-fastir.git
 [submodule "mig"]
 	path = juju4.mig
 	url = git@github.com:juju4/ansible-mig.git
-[submodule "mhn"]
-	path = juju4.mhn
-	url = git@github.com:juju4/ansible-mhn.git
-[submodule "grr"]
-	path = juju4.grr
-	url = git@github.com:juju4/ansible-grr.git
 [submodule "gpgkey_generate"]
 	path = juju4.gpgkey_generate
 	url = https://github.com/juju4/ansible-gpgkey_generate.git
@@ -67,9 +55,6 @@
 [submodule "dj-wasabi.ossec-server"]
 	path = dj-wasabi.ossec-server
 	url = git@github.com:juju4/ansible-ossec-server.git
-[submodule "monclient"]
-	path = juju4.monclient
-	url = git@github.com:juju4/ansible-monclient.git
 [submodule "swap"]
 	path = juju4.swap
 	url = git@github.com:juju4/ansible-swap.git
@@ -97,9 +82,6 @@
 [submodule "ossecwui"]
 	path = juju4.ossecwui
 	url = git@github.com:juju4/ansible-ossecwui.git
-[submodule "observium"]
-	path = juju4.observium
-	url = git@github.com:juju4/ansible-observium.git
 [submodule "MISP"]
 	path = juju4.MISP
 	url = git@github.com:juju4/ansible-MISP.git
@@ -136,15 +118,6 @@
 [submodule "jdauphant.unbound"]
 	path = jdauphant.unbound
 	url = git@github.com:juju4/ansible-role-unbound.git
-[submodule "juju4.icinga2"]
-	path = juju4.icinga2
-	url = https://github.com/juju4/ansible-icinga2.git
-[submodule "juju4.smokeping"]
-	path = juju4.smokeping
-	url = https://github.com/juju4/ansible-smokeping.git
-[submodule "juju4.nrpeclient"]
-	path = juju4.nrpeclient
-	url = git@github.com:juju4/ansible-nrpeclient.git
 [submodule "juju4.snmpd"]
 	path = juju4.snmpd
 	url = https://github.com/juju4/ansible-snmpd.git
@@ -154,18 +127,12 @@
 [submodule "juju4.ipv6"]
 	path = juju4.ipv6
 	url = git@github.com:juju4/ansible-ipv6.git
-[submodule "juju4.mhnclient"]
-	path = juju4.mhnclient
-	url = git@github.com:juju4/ansible-mhnclient.git
 [submodule "juju4.golang"]
 	path = juju4.golang
 	url = git@github.com:juju4/ansible-golang.git
 [submodule "juju4.rekall"]
 	path = juju4.rekall
 	url = git@github.com:juju4/ansible-rekall.git
-[submodule "juju4.jenkinsenv"]
-	path = juju4.jenkinsenv
-	url = git@github.com:juju4/ansible-jenkinsenv.git
 [submodule "juju4.lxd"]
 	path = juju4.lxd
 	url = git@github.com:juju4/ansible-lxd.git
@@ -181,18 +148,9 @@
 [submodule "juju4.kitchen"]
 	path = juju4.kitchen
 	url = git@github.com:juju4/ansible-kitchen.git
-[submodule "juju4.jenkins"]
-	path = juju4.jenkins
-	url = git@github.com:juju4/ansible-jenkins.git
 [submodule "juju4.volatility"]
 	path = juju4.volatility
 	url = git@github.com:juju4/ansible-volatility.git
-[submodule "juju4.zentral"]
-	path = juju4.zentral
-	url = git@github.com:juju4/ansible-zentral.git
-[submodule "juju4.jenkinsslave"]
-	path = juju4.jenkinsslave
-	url = git@github.com:juju4/ansible-jenkinsslave.git
 [submodule "juju4.vector"]
 	path = juju4.vector
 	url = git@github.com:juju4/ansible-vector.git
@@ -232,9 +190,6 @@
 [submodule "noplanman.lufi"]
 	path = noplanman.lufi
 	url = git@github.com:juju4/ansible-lufi.git
-[submodule "juju4.forensicator-fate"]
-	path = juju4.forensicator-fate
-	url = git@github.com:juju4/ansible-forensicator-fate.git
 [submodule "geerlingguy.postgresql"]
 	path = geerlingguy.postgresql
 	url = git@github.com:juju4/ansible-role-postgresql.git
@@ -244,12 +199,6 @@
 [submodule "juju4.floss"]
 	path = juju4.floss
 	url = git@github.com:juju4/ansible-floss.git
-[submodule "juju4.kolide"]
-	path = juju4.kolide
-	url = git@github.com:juju4/ansible-kolide.git
-[submodule "juju4.caldera"]
-	path = juju4.caldera
-	url = git@github.com:juju4/ansible-caldera.git
 [submodule "juju4.redhat_epel"]
 	path = juju4.redhat_epel
 	url = git@github.com:juju4/ansible-redhat-epel.git
@@ -259,9 +208,6 @@
 [submodule "juju4.aptcacherngclient"]
 	path = juju4.aptcacherngclient
 	url = git@github.com:juju4/ansible-apt-cacher-ng-client.git
-[submodule "juju4.caldera_agent"]
-	path = juju4.caldera_agent
-	url = git@github.com:juju4/ansible-caldera-agent.git
 [submodule "juju4.chrome_config"]
 	path = juju4.chrome_config
 	url = git@github.com:juju4/ansible-chrome-config.git
