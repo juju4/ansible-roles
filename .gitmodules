@@ -361,3 +361,6 @@
 [submodule "geerlingguy.redis"]
 	path = geerlingguy.redis
 	url = https://github.com/geerlingguy/ansible-role-redis
+[submodule "juju4.pandora"]
+	path = juju4.pandora
+	url = https://github.com/juju4/ansible-pandora
