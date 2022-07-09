@@ -340,3 +340,24 @@
 [submodule "juju4.zeek"]
 	path = juju4.zeek
 	url = git@github.com:juju4/ansible-zeek.git
+[submodule "cloudalchemy.blackbox-exporter"]
+	path = cloudalchemy.blackbox-exporter
+	url = https://github.com/cloudalchemy/ansible-blackbox-exporter
+[submodule "cloudalchemy.grafana"]
+	path = cloudalchemy.grafana
+	url = https://github.com/cloudalchemy/ansible-grafana
+[submodule "cloudalchemy.node_exporter"]
+	path = cloudalchemy.node_exporter
+	url = https://github.com/cloudalchemy/ansible-node-exporter
+[submodule "cloudalchemy.process_exporter"]
+	path = cloudalchemy.process_exporter
+	url = https://github.com/cloudalchemy/ansible-process_exporter
+[submodule "cloudalchemy.prometheus"]
+	path = cloudalchemy.prometheus
+	url = https://github.com/cloudalchemy/ansible-prometheus
+[submodule "cloudalchemy.systemd_exporter"]
+	path = cloudalchemy.systemd_exporter
+	url = https://github.com/cloudalchemy/ansible-systemd-exporter
+[submodule "geerlingguy.redis"]
+	path = geerlingguy.redis
+	url = https://github.com/geerlingguy/ansible-role-redis
