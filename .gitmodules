@@ -319,3 +319,6 @@
 [submodule "juju4.pandora"]
 	path = juju4.pandora
 	url = https://github.com/juju4/ansible-pandora
+[submodule "prymalinstynct.velociraptor"]
+	path = prymalinstynct.velociraptor
+	url = git@github.com:juju4/ansible_velociraptor.git
