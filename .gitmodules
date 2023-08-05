@@ -322,3 +322,6 @@
 [submodule "prymalinstynct.velociraptor"]
 	path = prymalinstynct.velociraptor
 	url = git@github.com:juju4/ansible_velociraptor.git
+[submodule "mdsketch.teleport"]
+	path = mdsketch.teleport
+	url = git@github.com:juju4/ansible-teleport.git
