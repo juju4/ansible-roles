@@ -331,3 +331,6 @@
 [submodule "juju4.arkime"]
 	path = juju4.arkime
 	url = git@github.com:juju4/ansible-arkime
+[submodule "juju4.powershell"]
+	path = juju4.powershell
+	url = git@github.com:juju4/ansible-powershell
