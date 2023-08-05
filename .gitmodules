@@ -7,18 +7,9 @@
 [submodule "sysdigcapture"]
 	path = juju4.sysdigcapture
 	url = git@github.com:juju4/ansible-sysdigcapture.git
-[submodule "scumblr"]
-	path = juju4.scumblr
-	url = git@github.com:juju4/ansible-scumblr.git
 [submodule "memcapture"]
 	path = juju4.memcapture
 	url = git@github.com:juju4/ansible-memcapture.git
-[submodule "loki"]
-	path = juju4.loki
-	url = git@github.com:juju4/ansible-loki.git
-[submodule "mig"]
-	path = juju4.mig
-	url = git@github.com:juju4/ansible-mig.git
 [submodule "gpgkey_generate"]
 	path = juju4.gpgkey_generate
 	url = https://github.com/juju4/ansible-gpgkey_generate.git
@@ -34,21 +25,6 @@
 [submodule "smokeping"]
 	path = juju4.smokeping
 	url = git@github.com:juju4/ansible-smokeping.git
-[submodule "flamegraph"]
-	path = juju4.flamegraph
-	url = git@github.com:juju4/ansible-flamegraph.git
-[submodule "vortessence"]
-	path = juju4.vortessence
-	url = git@github.com:juju4/ansible-vortessence.git
-[submodule "cis-ubuntu-ansible"]
-	path = cis-ubuntu-ansible
-	url = git@github.com:juju4/cis-ubuntu-ansible.git
-[submodule "cis-rhel-ansible"]
-	path = cis-rhel-ansible
-	url = git@github.com:juju4/cis-rhel-ansible.git
-[submodule "bakhti.elk"]
-	path = bakhti.elk
-	url = git@github.com:juju4/ansible-elk.git
 [submodule "dj-wasabi.ossec-agent"]
 	path = dj-wasabi.ossec-agent
 	url = git@github.com:juju4/ansible-ossec-agent.git
@@ -94,9 +70,6 @@
 [submodule "upgrade_pkgs"]
 	path = juju4.upgrade_pkgs
 	url = git@github.com:juju4/ansible-upgrade-pkgs.git
-[submodule "Mayeu.RabbitMQ"]
-	path = Mayeu.RabbitMQ
-	url = git@github.com:juju4/ansible-playbook-rabbitmq.git
 [submodule "geerlingguy.java"]
 	path = geerlingguy.java
 	url = git@github.com:juju4/ansible-role-java.git
@@ -106,15 +79,9 @@
 [submodule "geerlingguy.jenkins"]
 	path = geerlingguy.jenkins
 	url = git@github.com:juju4/ansible-role-jenkins.git
-[submodule "brianshumate.hubot"]
-	path = brianshumate.hubot
-	url = git@github.com:juju4/ansible-hubot.git
 [submodule "Stouts.openvpn"]
 	path = Stouts.openvpn
 	url = git@github.com:juju4/Stouts.openvpn.git
-[submodule "zzet.rbenv"]
-	path = zzet.rbenv
-	url = git@github.com:juju4/ansible-rbenv-role.git
 [submodule "jdauphant.unbound"]
 	path = jdauphant.unbound
 	url = git@github.com:juju4/ansible-role-unbound.git
@@ -130,9 +97,6 @@
 [submodule "juju4.golang"]
 	path = juju4.golang
 	url = git@github.com:juju4/ansible-golang.git
-[submodule "juju4.rekall"]
-	path = juju4.rekall
-	url = git@github.com:juju4/ansible-rekall.git
 [submodule "juju4.lxd"]
 	path = juju4.lxd
 	url = git@github.com:juju4/ansible-lxd.git
@@ -151,9 +115,6 @@
 [submodule "juju4.volatility"]
 	path = juju4.volatility
 	url = git@github.com:juju4/ansible-volatility.git
-[submodule "juju4.vector"]
-	path = juju4.vector
-	url = git@github.com:juju4/ansible-vector.git
 [submodule "juju4.fprobe"]
 	path = juju4.fprobe
 	url = git@github.com:juju4/ansible-fprobe.git
@@ -244,18 +205,12 @@
 [submodule "juju4.osquery"]
 	path = juju4.osquery
 	url = git@github.com:juju4/ansible-osquery.git
-[submodule "juju4.w3af"]
-	path = juju4.w3af
-	url = git@github.com:juju4/ansible-w3af.git
 [submodule "juju4.win_applocker"]
 	path = juju4.win_applocker
 	url = git@github.com:juju4/ansible-win-applocker.git
 [submodule "juju4.win_audit"]
 	path = juju4.win_audit
 	url = git@github.com:juju4/ansible-win-audit.git
-[submodule "juju4.nfsen"]
-	path = juju4.nfsen
-	url = git@github.com:juju4/ansible-nfsen.git
 [submodule "geerlingguy.kibana"]
 	path = geerlingguy.kibana
 	url = git@github.com:juju4/ansible-role-kibana
