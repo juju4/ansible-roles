@@ -328,3 +328,6 @@
 [submodule "juju4.cribl"]
 	path = juju4.cribl
 	url = git@github.com:juju4/ansible-cribl
+[submodule "juju4.arkime"]
+	path = juju4.arkime
+	url = git@github.com:juju4/ansible-arkime
