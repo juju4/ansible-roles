@@ -331,3 +331,6 @@
 [submodule "juju4.mde"]
 	path = juju4.mde
 	url = git@github.com:juju4/ansible-mde
+[submodule "juju4.starbase"]
+	path = juju4.starbase
+	url = git@github.com:juju4/ansible-starbase
