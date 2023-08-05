@@ -334,3 +334,6 @@
 [submodule "juju4.powershell"]
 	path = juju4.powershell
 	url = git@github.com:juju4/ansible-powershell
+[submodule "juju4.mde"]
+	path = juju4.mde
+	url = git@github.com:juju4/ansible-mde
