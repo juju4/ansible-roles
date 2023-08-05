@@ -52,9 +52,6 @@
 [submodule "harden"]
 	path = juju4.harden
 	url = git@github.com:juju4/ansible-harden.git
-[submodule "ossecwui"]
-	path = juju4.ossecwui
-	url = git@github.com:juju4/ansible-ossecwui.git
 [submodule "MISP"]
 	path = juju4.MISP
 	url = git@github.com:juju4/ansible-MISP.git
