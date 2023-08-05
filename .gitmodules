@@ -37,9 +37,6 @@
 [submodule "openvpnclient"]
 	path = juju4.openvpnclient
 	url = git@github.com:juju4/ansible-openvpnclient.git
-[submodule "ooniprobe"]
-	path = juju4.ooniprobe
-	url = git@github.com:juju4/ansible-ooniprobe.git
 [submodule "squid"]
 	path = juju4.squid
 	url = git@github.com:juju4/ansible-squid.git
