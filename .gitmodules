@@ -334,3 +334,6 @@
 [submodule "juju4.starbase"]
 	path = juju4.starbase
 	url = git@github.com:juju4/ansible-starbase
+[submodule "juju4.newspipe"]
+	path = juju4.newspipe
+	url = https://github.com/juju4/ansible-newspipe
