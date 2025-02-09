@@ -337,3 +337,6 @@
 [submodule "juju4.newspipe"]
 	path = juju4.newspipe
 	url = https://github.com/juju4/ansible-newspipe
+[submodule "juju4.openobserve"]
+	path = juju4.openobserve
+	url = https://github.com/juju4/ansible-openobserve
