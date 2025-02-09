@@ -343,3 +343,6 @@
 [submodule "juju4.lookyloo"]
 	path = juju4.lookyloo
 	url = https://github.com/juju4/ansible-lookyloo
+[submodule "juju4.semaphoreui"]
+	path = juju4.semaphoreui
+	url = https://github.com/juju4/ansible-semaphoreui
