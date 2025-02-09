@@ -346,3 +346,6 @@
 [submodule "juju4.semaphoreui"]
 	path = juju4.semaphoreui
 	url = https://github.com/juju4/ansible-semaphoreui
+[submodule "juju4.ripe_atlas_swprobe"]
+	path = juju4.ripe_atlas_swprobe
+	url = https://github.com/juju4/ansible-ripe-atlas-swprobe
