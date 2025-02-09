@@ -349,3 +349,6 @@
 [submodule "juju4.ripe_atlas_swprobe"]
 	path = juju4.ripe_atlas_swprobe
 	url = https://github.com/juju4/ansible-ripe-atlas-swprobe
+[submodule "juju4.kunai"]
+	path = juju4.kunai
+	url = https://github.com/juju4/ansible-kunai
