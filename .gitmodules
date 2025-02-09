@@ -355,3 +355,6 @@
 [submodule "juju4.ollama"]
 	path = juju4.ollama
 	url = https://github.com/juju4/ansible-ollama
+[submodule "juju4.openwebui"]
+	path = juju4.openwebui
+	url = https://github.com/juju4/ansible-openwebui
