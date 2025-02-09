@@ -340,3 +340,6 @@
 [submodule "juju4.openobserve"]
 	path = juju4.openobserve
 	url = https://github.com/juju4/ansible-openobserve
+[submodule "juju4.lookyloo"]
+	path = juju4.lookyloo
+	url = https://github.com/juju4/ansible-lookyloo
