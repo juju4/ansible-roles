@@ -352,3 +352,6 @@
 [submodule "juju4.kunai"]
 	path = juju4.kunai
 	url = https://github.com/juju4/ansible-kunai
+[submodule "juju4.ollama"]
+	path = juju4.ollama
+	url = https://github.com/juju4/ansible-ollama
